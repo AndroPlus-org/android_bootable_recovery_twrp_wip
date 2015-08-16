@@ -1047,7 +1047,7 @@ bool TWPartition::Mount(bool Display_Error) {
 					LOGERR("Unable to mount '%s'\n", Mount_Point.c_str());
 				else
 					LOGINFO("Unable to mount '%s'\n", Mount_Point.c_str());
-				LOGINFO("Actual block device: '%s', current file system: '%s', flags: 0x%8x, options: '%s'\n", Actual_Block_Device.c_str(), Current_File_System.c_str(), flags, Mount_Options.c_str());
+				LOGINFO("Actual block device: '%s', current file system: '%s', flags: 0x%lx, options: '%s'\n", Actual_Block_Device.c_str(), Current_File_System.c_str(), flags, Mount_Options.c_str());
 				return false;
 			}
 		} else {
@@ -2234,7 +2234,7 @@ uint64_t TWPartition::Get_Max_FileSize() {
 		maxFileSize = 3.94 * constTB; //3.94 TB
 	else
 		maxFileSize = 100000000L;
-	LOGINFO("Get_Max_FileSize::maxFileSize: %llu\n", maxFileSize);
+	LOGINFO("Get_Max_FileSize::maxFileSize: %lu\n", maxFileSize);
 	return maxFileSize - 1;
 }
 
